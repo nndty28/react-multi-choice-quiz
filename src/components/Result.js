@@ -14,14 +14,15 @@ function Result(props) {
       transitionAppearTimeout={500}
     >
       <div>
-        You prefer <strong>{props.quizResult}</strong>!
+        <h2>Remaining budget: ${props.result}</h2>
+        <h2>You spent a total of ${4000-props.result}</h2>
       </div>
     </CSSTransitionGroup>
   );
 }
 
 Result.propTypes = {
-  quizResult: PropTypes.string.isRequired
+  result: PropTypes.number.isRequired
 };
 
 export default Result;

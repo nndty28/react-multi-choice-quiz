@@ -9,11 +9,11 @@ function Quiz(props) {
   function renderAnswerOptions(key) {
     return (
       <AnswerOption
-        key={key.content}
-        answerContent={key.content}
-        answerType={key.type}
-        answer={props.answer}
-        questionId={props.questionId}
+        key={key.option}
+        option={key.option}
+        cost={key.type}
+        selectedAnswer={props.selectedAnswer}
+        //questionId={props.questionId}
         onAnswerSelected={props.onAnswerSelected}
       />
     );
@@ -41,7 +41,7 @@ function Quiz(props) {
 }
 
 Quiz.propTypes = {
-  answer: PropTypes.string.isRequired,
+  selectedAnswer: PropTypes.string.isRequired,
   answerOptions: PropTypes.array.isRequired,
   question: PropTypes.string.isRequired,
   questionId: PropTypes.number.isRequired,
